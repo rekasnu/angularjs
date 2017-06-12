@@ -1,0 +1,50 @@
+
+	
+<!-- next controler in seperate doom object -->
+<!-- use controller as something ng-controller='EventItemController as something' -->
+<div class='row' ng-controller='EventItemCntrl as nex'>
+	<div class='col-md-8'>
+		<img class='img-responsive' src='./CEq_OWsWYAEHffT.jpg' alt='some'>
+		<img class='img-responsive pull-left' src='./one.jpg' alt='some1'>
+	</div>
+
+	<div class="col-md-4" ng-controller='EventTabCntrl as eventtab'>
+		<h3>{{nex.itemTitle}}</h3>
+		<p>{{nex.description}}</p>
+		<h3>Details</h3>
+		<ul class='nav nav-tabs'>
+			<li ng-click='eventtab.setTab(0)' class='active'><a href=''>Schedule</a></li>
+			<li ng-click='eventtab.setTab(1)'><a href=''>Tickets</a></li>
+			<li ng-click='eventtab.setTab(2)'><a href=''>Locations</a></li>
+		</ul>
+	
+		
+		<div ng-show='(eventtab.tab==0)'>
+			Content for tabs go here
+		</div>
+		<div ng-show='(eventtab.tab==2)'>
+			<h1>{{nex.date}}</h1>
+			<img ng-show='(eventtab.tab==2)' class='img-responsive pull-left' ng-src='{{nex.imageSrc2}}' alt='some1'>
+		</div>
+		<div ng-show='!(eventtab.tab==0) || eventtab.tab==1'>
+		<img ng-show='eventtab.tab==1' class='img-responsive pull-left' ng-src='{{nex.imageSrc}}' alt='some1'>
+		</div>
+	</div>
+	<div>{{nex.message}}</div>
+</div>
+
+<!-- repeaters filters -->
+
+<div class="row">
+	<div class="col-lg-12">
+		<h3 class="page-header">Related projects</h3>
+	</div>
+	<div class="col-lg-12">
+		<!-- bind inputfield to model with ng-model -->
+		<input type='text' ng-model='event.search' placeholder='Search by Acris title'>
+	</div>
+	<h3>{{event.basePath}}</h3>
+	<event-item></event-item>
+
+</div>
+	

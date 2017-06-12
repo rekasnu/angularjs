@@ -1,0 +1,22 @@
+
+one time binding uses :: <h1>{{::event.title}}</h1>
+improves app speed
+
+
+
+ui router
+
+ng-rout
+$routeProvider
+ng-view
+
+state based routing
+
+routs are declared in .config function in mainApp.js file
+
+=============prety urls ======== no hash symbold
+
+1. configure location provider $locationProvider
+	setHtml5mode(true);
+	clean urls using history state saves.
+2. set base for relative url

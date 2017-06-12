@@ -1,0 +1,12 @@
+<div ng-repeat="item in event.events | orderBy : 'date' | searchAct : event.search" class='col-sm-3 col-xs-6'>
+			<a ng-href="#">
+				<img class='img-responsive imc' ng-src='./picks/{{item.imgName}}.jpg' >
+			</a>
+			<div>
+				<h4>{{item.title}}</h4>
+				<p>{{item.description}}</p>
+				<h5>{{item.date | date:'MMMM,dd yyyy'}}</h5>
+				<!-- formating date format -->
+
+			</div>
+		</div>
